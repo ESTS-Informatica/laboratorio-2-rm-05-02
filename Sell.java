@@ -2,15 +2,9 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-/**
- * A sell of a property, performed by a seller to a client.
- *
- * @author POO
- * @version 03/2024
- */
 public class Sell {
 
-    private static int NUMBER_OF_SELLS = 0;
+    private static int numberOfSells = 0;
     // Id of the sell.
     private final String id;
     // Client to whom the sell is done.
@@ -30,7 +24,7 @@ public class Sell {
      * @param property The sold property.
      */
     public Sell(User client, User seller, Property property) {
-        this.id = Integer.toString(++NUMBER_OF_SELLS);
+        id = Integer.toString(++numberOfSells);
         this.client = client;
         this.seller = seller;
         this.property = property;
@@ -43,7 +37,7 @@ public class Sell {
      * @return This sell id.
      */
     public String getId() {
-        return this.id;
+        return id;
     }
 
     /**
@@ -52,7 +46,7 @@ public class Sell {
      * @return The client of this sell.
      */
     public User getClient() {
-        return this.client;
+        return client;
     }
     /**
      * Get the seller.
@@ -60,7 +54,7 @@ public class Sell {
      * @return The seller of this sell.
      */
     public User getSeller() {
-        return this.seller;
+        return seller;
     }
 
     /**
@@ -69,7 +63,7 @@ public class Sell {
      * @return The sold property.
      */
     public Property getProperty() {
-        return this.property;
+        return property;
     }
 
     /**
@@ -78,7 +72,7 @@ public class Sell {
      * @return The sell date.
      */
     public LocalDate getDate() {
-        return this.date;
+        return date;
     }
 
     /**
@@ -95,8 +89,8 @@ public class Sell {
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/YYYY");
-        return "Data da venda \t: " + this.date.format(formatter) + "\n"
-                + this.property + "\n";
+        return "Data da venda \t: " + date.format(formatter) + "\n"
+                + property + "\n";
     }
 
 }

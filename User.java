@@ -1,14 +1,7 @@
 
-
-/**
- * User can either be a client or a seller.
- *
- * @author POO
- * @version 03/2024
- */
 public class User {
 
-    private static int NUMBER_OF_USERS = 0;
+    private static int numberOfUsers = 0;
     // The user id.
     private final String id;
     // The user name.
@@ -26,7 +19,7 @@ public class User {
      * @param email The user email.
      */
     public User(String name, String phone, String email) {
-        this.id = Integer.toString(++NUMBER_OF_USERS);
+        id = Integer.toString(++numberOfUsers);
         this.name = (name != null) ? name : "";
         this.phone = (phone != null) ? phone : "";
         this.email = (email != null) ? email : "";
@@ -38,7 +31,7 @@ public class User {
      * @return This user id.
      */
     public String getId() {
-        return this.id;
+        return id;
     }
 
     /**
@@ -47,7 +40,7 @@ public class User {
      * @return This user name.
      */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
@@ -67,7 +60,7 @@ public class User {
      * @return This user phone.
      */
     public String getPhone() {
-        return this.phone;
+        return phone;
     }
 
     /**
@@ -87,7 +80,7 @@ public class User {
      * @return This user E-mail.
      */
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     /**
@@ -103,7 +96,7 @@ public class User {
 
     @Override
     public String toString() {
-        return this.name + "\t(" + this.phone + ")\t" + this.email;
+        return name + "\t(" + phone + ")\t" + email;
     }
 
     /**

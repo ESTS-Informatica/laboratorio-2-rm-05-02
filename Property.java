@@ -1,16 +1,10 @@
-/**
- * A property to sell.
- *
- * @author POO
- * @version 03/2024
- */
+
 public class Property {
 
-    private static int NUMBER_OF_PROPERTIES = 0;
+    private static int numberOfProperties = 0;
     private final String id;
-    private String model;
-    private double price;
     private String description;
+    private double price;
 
     /**
      * Constructor of class Property
@@ -19,18 +13,19 @@ public class Property {
      * @param price The property price.
      */
     public Property(String description, double price) {
-        this.id = null;
-        this.description = description;
-        this.price = -1;
+        id = Integer.toString(++numberOfProperties);
+        this.description = (description != null) ? description : "";
+        this.price = (price > 0) ? price : 0.0;
+
     }
 
     /**
      * Id selector.
      */
     public String getId() {
-        return null;
+        return id;
     }
-    
+
     /**
      * Description selector.
      */
@@ -44,7 +39,7 @@ public class Property {
      * @param description The new description. Must not be null.
      */
     public void setDescription(String description) {
-        if (description != null){
+        if (description != null) {
             this.description = description;
         }
     }
@@ -53,7 +48,7 @@ public class Property {
      * Price selector.
      */
     public double getPrice() {
-        return -1;
+        return price;
     }
     
     /**
@@ -69,6 +64,7 @@ public class Property {
 
     @Override
     public String toString() {
-        return "Descricao: " + description + "\nPreço: " + price + " Euros";
+        return "Descricao\t\t: " + description + "\n"
+             + "Preço\t\t: " + price + " Euros";
     }
 }
