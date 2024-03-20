@@ -12,6 +12,7 @@ public class Property {
     private final String id;
     private String model;
     private double price;
+    private String description;
 
     /**
      * Constructor of class Property
@@ -20,21 +21,23 @@ public class Property {
      * @param price The property price.
      */
     public Property(String description, double price) {
-
+        this.id = null;
+        this.description = description;
+        this.price = -1;
     }
 
     /**
      * Id selector.
      */
     public String getId() {
-        
+        return null;
     }
-
+    
     /**
      * Description selector.
      */
     public String getDescription() {
-
+        return null;
     }
 
     /**
@@ -43,14 +46,16 @@ public class Property {
      * @param description The new description. Must not be null.
      */
     public void setDescription(String description) {
-
+        if (description != null){
+            this.description = description;
+        }
     }
 
     /**
      * Price selector.
      */
     public double getPrice() {
-        
+        return -1;
     }
     
     /**
@@ -59,10 +64,13 @@ public class Property {
      * @param price The new price. Must not be negative.
      */
     public void setPrice(double price) {
-
+        if (price >= 0.0) {
+            this.price = price;
+        }
     }
 
     @Override
     public String toString() {
+        return null;
     }
 }
