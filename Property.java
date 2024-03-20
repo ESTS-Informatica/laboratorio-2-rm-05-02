@@ -1,5 +1,3 @@
-
-
 /**
  * A property to sell.
  *
@@ -37,7 +35,7 @@ public class Property {
      * Description selector.
      */
     public String getDescription() {
-        return null;
+        return description;
     }
 
     /**
@@ -71,6 +69,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return null;
+        return "Descricao: " + description + "\nPreço: " + price + " Euros";
     }
 }
